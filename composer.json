@@ -1,0 +1,19 @@
+{
+  "name": "santiagoscano/php-database",
+  "description": "A simple PHP database class",
+  "type": "project",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Santiago Sierra Cano",
+      "email": "santiscano@gmail.com"
+    }
+  ],
+    "autoload": {
+        "psr-4": {
+          "App\\": "app/",
+          "Database\\": "database/"
+        }
+    }
+
+}
