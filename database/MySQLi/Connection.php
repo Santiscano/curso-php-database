@@ -15,7 +15,8 @@ if (!$connProc) {
 // forma orientada a objetos
 $connObj = new mysqli($server, $username, $password, $database);
 if ($connObj->connect_errno) {
-    die("Connection failed: " . $connObj->connect_error);
+  die("Connection failed: " . $connObj->connect_error);
 }
 
 echo "Connected successfully";
+

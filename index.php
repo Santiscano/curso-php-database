@@ -19,6 +19,7 @@ $incomes_controller->store([
 
 
 $withdrawals_controller = new WithdrawalController();
+// *esta forma  haria que tenga que extraer cada valor en el bind_param
 $withdrawals_controller->store([
   "payment_method" => PaymentMethodEnum::CreditCard->value,
   "type" => WithdrawalTypeEnum::Purchase->value,
@@ -26,3 +27,14 @@ $withdrawals_controller->store([
   "amount" => 100,
   "description" => "Purchase of a new laptop"
 ]);
+
+// la opcion 2 es aqui poner los : en las keys 
+// $withdrawals_controller->store([
+//   ":payment_method" => PaymentMethodEnum::CreditCard->value,
+//   ":type" => WithdrawalTypeEnum::Purchase->value,
+//   ":date" => date("Y-m-d H:i:s"),
+//   ":amount" => 100,
+//   ":description" => "Purchase of a new laptop"
+// ]);
+
+$withdrawals_controller->index();
