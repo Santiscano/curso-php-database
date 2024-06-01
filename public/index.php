@@ -1,10 +1,10 @@
 <?php
 
+require("../vendor/autoload.php");
+
 use App\Controllers\IncomesController;
 use App\Controllers\WithdrawalController;
 use Router\RouterHandler;
-
-require("../vendor/autoload.php");
 
 // obtener la URL
 $slug = $_GET['slug'] ?? '/';
@@ -13,14 +13,18 @@ $slug = explode('/', $slug);
 
 $resourse = $slug[0] == "" ? "/" : $slug[0];
 $id = $slug[1] ?? null;
+// incomes/1
 
+// instancia del router
 $router = new RouterHandler();
 
 switch ($resourse) {
   case '/':
+    echo "estas en Home";
     // $controller = new App\Controllers\HomeController();
     // $controller->index();
     break;
+
   case 'incomes':
     $method = $_POST['_method'] ?? 'POST';
     $router->set_method($method);
@@ -33,6 +37,7 @@ switch ($resourse) {
     //   $controller->index();
     // }
     break;
+
   case 'withdrawals':
     $method = $_POST['_method'] ?? 'POST';
     $router->set_method($method);
